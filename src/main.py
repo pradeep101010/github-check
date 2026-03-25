@@ -106,7 +106,7 @@ def process_region(region):
                     )
 
 
-def main():
+def main(event=None, context=None):
     with ThreadPoolExecutor(max_workers=5) as executor:
         executor.map(process_region, DEFAULT_REGIONS)
 
