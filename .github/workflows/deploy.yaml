@@ -38,3 +38,4 @@ jobs:
           aws lambda update-function-code \
             --function-name github-deployed-function-test \
             --zip-file fileb://deployment.zip
+            --handler main.main 
