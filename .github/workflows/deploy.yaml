@@ -35,21 +35,16 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-west-2
         run: |
-            aws lambda update-function-code \
+           aws lambda update-function-code \
             --function-name github-deployed-function-test \
             --zip-file fileb://deployment.zip
-        
+
             aws lambda wait function-updated \
             --function-name github-deployed-function-test
 
             aws lambda update-function-configuration \
             --function-name github-deployed-function-test \
             --handler main.main \
-            --timeout 900
+            --timeout 900 \
+            --memory-size 1024
 
-            aws lambda wait function-updated \
-            --function-name github-deployed-function-test
-
-            aws lambda update-function-configuration \
-            --function-name github-deployed-function-test \
-            --handler main.main 
