@@ -36,5 +36,5 @@ jobs:
           AWS_REGION: us-east-1
         run: |
           aws lambda update-function-code \
-            --function-name my-lambda-function \
+            --function-name github-deployed-function-test \
             --zip-file fileb://deployment.zip
