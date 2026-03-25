@@ -38,6 +38,9 @@ jobs:
             aws lambda update-function-code \
             --function-name github-deployed-function-test \
             --zip-file fileb://deployment.zip
+        
+            aws lambda wait function-updated \
+            --function-name github-deployed-function-test
 
             aws lambda update-function-configuration \
             --function-name github-deployed-function-test \
