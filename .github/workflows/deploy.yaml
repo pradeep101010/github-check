@@ -46,6 +46,6 @@ jobs:
             --function-name github-deployed-function-test \
             --handler main.main \
             --timeout 900 \
-            --memory-size 1024
+            --memory-size 1024 \
             --role arn:aws:iam::793421532190:role/service-role/github-deployed-function-test-role-aaqspzqc
 
